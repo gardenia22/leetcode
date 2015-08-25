@@ -1,4 +1,11 @@
-# Byte-compiled / optimized / DLL files
+# System file
+.DS_Store
+
+# Sublime text configuration
+leetcode.sublime-project
+leetcode.sublime-workspace
+
+## Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 
