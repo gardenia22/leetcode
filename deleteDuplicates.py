@@ -1,10 +1,13 @@
 # Definition for singly-linked list.
 class ListNode(object):
+
     def __init__(self, x):
         self.val = x
         self.next = None
 
+
 class Solution(object):
+
     def deleteDuplicates1(self, head):
         zero = ListNode(0)
         zero.next = head
@@ -33,23 +36,23 @@ class Solution(object):
                 flag = True
             else:
                 if flag:
-                # delete the fisrt duplicate node
+                    # delete the fisrt duplicate node
                     if p.next:
-                    # if the first deplicate node is not the tail
+                        # if the first deplicate node is not the tail
                         p.val = p.next.val
                         p.next = p.next.next
                     else:
-                    # if the first deplicate node is the tail
+                        # if the first deplicate node is the tail
                         p = head
                         pre = None
                         while p.next:
                             pre = p
                             p = p.next
                         if pre:
-                        # if the first duplicated node is not the head
+                            # if the first duplicated node is not the head
                             pre.next = None
                         else:
-                        # if the first duplicated node is the head
+                            # if the first duplicated node is the head
                             head = pre
                 else:
                     p = p.next
@@ -57,7 +60,7 @@ class Solution(object):
         return head
 
 a = Solution()
-nodes = map(ListNode,[0,1,1,5,6,7,7])
+nodes = map(ListNode, [0, 1, 1, 5, 6, 7, 7])
 for i in range(len(nodes)-1):
     nodes[i].next = nodes[i+1]
 head = nodes[0]

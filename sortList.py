@@ -1,14 +1,18 @@
 # Definition for singly-linked list.
 class ListNode:
+
     def __init__(self, x):
         self.val = x
         self.next = None
 
+
 class Solution:
     # @param {ListNode} head
     # @return {ListNode}
+
     def sortList(self, head):
-        if not head: return head
+        if not head:
+            return head
         p = head
         l = 0
         while p:
@@ -18,7 +22,7 @@ class Solution:
         return head
 
     def mergeSort(self, head, l):
-        if l==1:
+        if l == 1:
             return 0
         mid = l/2
         p = head
@@ -35,7 +39,7 @@ class Solution:
         n1 = mid
         n2 = l-mid
         while n1:
-            if n2 and p1.val>p2.val:
+            if n2 and p1.val > p2.val:
                 # exchange value of p1 and p2
                 temp = p1.val
                 p1.val = p2.val
@@ -56,7 +60,7 @@ class Solution:
         last.next = p2
 
 a = Solution()
-nodes = map(ListNode,[2,1,4,6,7])
+nodes = map(ListNode, [2, 1, 4, 6, 7])
 for i in range(len(nodes)-1):
     nodes[i].next = nodes[i+1]
 head = nodes[0]
@@ -65,6 +69,3 @@ a.sortList(head)
 while head:
     print head.val,
     head = head.next
-            
-
-        

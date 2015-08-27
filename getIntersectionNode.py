@@ -4,9 +4,11 @@
 #         self.val = x
 #         self.next = None
 
+
 class Solution:
     # @param two ListNodes
     # @return the intersected ListNode
+
     def getIntersectionNode(self, headA, headB):
         pA, pB = headA, headB
         sizeA, sizeB = 0, 0

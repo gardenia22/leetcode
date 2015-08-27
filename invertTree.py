@@ -5,14 +5,16 @@
 #         self.left = None
 #         self.right = None
 
+
 class Solution:
     # @param {TreeNode} root
     # @return {TreeNode}
+
     def invertTree(self, root):
         if root:
             self.invertTree(root.left)
             self.invertTree(root.right)
             temp = root.left
             root.left = root.right
-            root.right = temp        
+            root.right = temp
         return root
